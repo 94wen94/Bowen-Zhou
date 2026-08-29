@@ -33,6 +33,7 @@ body {
   font-optical-sizing: auto;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  scroll-padding-top: 72px;
 }
 
 body::before {
@@ -114,10 +115,15 @@ a:hover { border-bottom-color: var(--accent); }
   text-align: center;
 }
 .content { width: 78%; padding-left: 5%; }
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .author-avatar {
-  width: 175px;
-  height: 175px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto 18px;
   border-radius: 50%;
   overflow: hidden;
@@ -146,16 +152,38 @@ a:hover { border-bottom-color: var(--accent); }
   letter-spacing: -0.01em;
   margin-bottom: 3px;
 }
+.author-affil span { white-space: nowrap; }
 .author-affil-sub {
   font-family: var(--font-ui);
   font-size: 0.74rem;
   font-weight: 500;
   color: var(--faint);
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
-.author-links { list-style: none; }
-.author-links li { padding: 4px 0; }
+.author-focus {
+  max-width: 190px;
+  margin: 0 auto 18px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--faint);
+}
+.author-links {
+  width: 182px;
+  list-style: none;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+.author-links li { padding: 3px 0; }
 .author-links a {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 5px 12px;
+  border-radius: 8px;
   font-family: var(--font-ui);
   font-size: 0.8rem;
   font-weight: 600;
@@ -163,7 +191,27 @@ a:hover { border-bottom-color: var(--accent); }
   color: var(--ink);
   border-bottom: none;
 }
-.author-links a:hover { color: var(--faint); border-bottom: none; }
+.sidebar .author-links svg {
+  width: 17px;
+  height: 17px;
+  min-width: 17px;
+  min-height: 17px;
+  max-width: 17px;
+  max-height: 17px;
+  flex: 0 0 17px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.65;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sidebar .author-links li:last-child svg { fill: currentColor; stroke: none; }
+.author-links a:hover {
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-bottom: none;
+}
 
 .bio {
   font-size: 1.02rem;
@@ -437,6 +485,8 @@ footer { border-top: 1px solid var(--line); padding-top: 22px; font-family: var(
   .sidebar { width: 100%; position: static; margin-bottom: 36px; }
   .content { width: 100%; padding-left: 0; }
   .author-avatar { width: 140px; height: 140px; }
+  .author-links { width: auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 8px; border-top: none; padding-top: 0; }
+  .author-links li { padding: 0; }
   .pub { grid-template-columns: 240px 1fr; gap: 1.2rem; }
 }
 

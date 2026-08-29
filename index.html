@@ -8,10 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css?v=20260829-2">
 <script src="main.js" defer></script>
 </head>
-<body>
+<body id="top">
 
 <nav class="topnav">
   <div class="topnav-inner">
@@ -25,20 +25,36 @@
   </div>
 </nav>
 
-<div class="layout" id="top">
+<div class="layout">
 
-  <aside class="sidebar">
+  <aside class="sidebar" aria-label="Profile">
     <div class="author">
       <div class="author-avatar">
         <img src="assets/avatar.png" alt="Bowen Zhou">
       </div>
       <h1 class="author-name">Bowen Zhou</h1>
-      <p class="author-affil">M.S. Student,<br>Tsinghua University</p>
+      <p class="author-affil">M.S. Student,<br><span>Tsinghua University</span></p>
       <p class="author-affil-sub">Artificial Intelligence</p>
+      <p class="author-focus">Universal Digital Agents</p>
       <ul class="author-links">
-        <li><a href="mailto:zhoubw25@mails.tsinghua.edu.cn">Email</a></li>
-        <li><a href="https://scholar.google.com/citations?user=aURLC5gAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
-        <li><a href="https://github.com/94wen94" target="_blank" rel="noopener">GitHub</a></li>
+        <li>
+          <a href="mailto:zhoubw25@mails.tsinghua.edu.cn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.75 5.75h16.5v12.5H3.75zM4.5 6.5l7.5 6 7.5-6"/></svg>
+            <span>Email</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://scholar.google.com/citations?user=aURLC5gAAAAJ&hl=en" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9.25 12 4l9 5.25L12 14.5zM6.5 11.6v4.15c1.5 1.5 3.35 2.25 5.5 2.25s4-.75 5.5-2.25V11.6M20 10v6"/></svg>
+            <span>Google Scholar</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/94wen94" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0-2.69 16.56c.43.08.58-.18.58-.41v-1.63c-2.4.52-2.9-1.02-2.9-1.02-.39-1-.96-1.27-.96-1.27-.79-.54.06-.53.06-.53.87.06 1.33.9 1.33.9.78 1.32 2.03.94 2.53.72.08-.56.3-.94.55-1.16-1.91-.22-3.92-.96-3.92-4.2 0-.93.33-1.69.89-2.29-.09-.22-.39-1.08.08-2.25 0 0 .72-.23 2.34.87A8.15 8.15 0 0 1 12 7.5c.72 0 1.44.1 2.12.29 1.62-1.1 2.34-.87 2.34-.87.47 1.17.17 2.03.08 2.25.56.6.89 1.36.89 2.29 0 3.25-2.02 3.98-3.94 4.19.31.27.58.79.58 1.6v2.4c0 .23.16.5.59.41A8.5 8.5 0 0 0 12 3.5Z"/></svg>
+            <span>GitHub</span>
+          </a>
+        </li>
       </ul>
     </div>
   </aside>

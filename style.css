@@ -190,7 +190,7 @@ a:hover { border-bottom-color: var(--accent); }
   color: var(--faint);
 }
 .author-links {
-  width: 182px;
+  width: 232px;
   list-style: none;
   padding-top: 12px;
   border-top: 1px solid var(--line);
@@ -210,6 +210,11 @@ a:hover { border-bottom-color: var(--accent); }
   letter-spacing: -0.01em;
   color: var(--ink);
   border-bottom: none;
+}
+.author-links .email-address {
+  font-size: 0.7rem;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
 }
 .sidebar .author-links svg {
   width: 17px;

@@ -1,37 +1,39 @@
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
-const navItems = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+const toggle = document.querySelector(".nav-toggle");
+const menu = document.querySelector(".nav-links");
+const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
 const sections = [...document.querySelectorAll("main section[id]")];
 
-navToggle?.addEventListener("click", () => {
-  const isOpen = navToggle.getAttribute("aria-expanded") === "true";
-  navToggle.setAttribute("aria-expanded", String(!isOpen));
-  navLinks?.classList.toggle("open", !isOpen);
+toggle?.addEventListener("click", () => {
+  const nextState = toggle.getAttribute("aria-expanded") !== "true";
+  toggle.setAttribute("aria-expanded", String(nextState));
+  toggle.textContent = nextState ? "Close" : "Menu";
+  menu?.classList.toggle("open", nextState);
 });
 
-navItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    navToggle?.setAttribute("aria-expanded", "false");
-    navLinks?.classList.remove("open");
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    toggle?.setAttribute("aria-expanded", "false");
+    if (toggle) toggle.textContent = "Menu";
+    menu?.classList.remove("open");
   });
 });
 
-const observer = new IntersectionObserver(
+const sectionObserver = new IntersectionObserver(
   (entries) => {
-    const visible = entries
+    const current = entries
       .filter((entry) => entry.isIntersecting)
       .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-    if (!visible) return;
+    if (!current) return;
 
-    navItems.forEach((item) => {
-      item.classList.toggle("active", item.getAttribute("href") === `#${visible.target.id}`);
+    links.forEach((link) => {
+      link.classList.toggle("active", link.getAttribute("href") === `#${current.target.id}`);
     });
   },
-  { rootMargin: "-18% 0px -68%", threshold: [0, 0.2, 0.5] },
+  { rootMargin: "-18% 0px -66%", threshold: [0, 0.2, 0.5] },
 );
 
-sections.forEach((section) => observer.observe(section));
+sections.forEach((section) => sectionObserver.observe(section));
 
 const year = document.querySelector("#year");
 if (year) year.textContent = String(new Date().getFullYear());

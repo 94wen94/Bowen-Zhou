@@ -192,8 +192,7 @@ a:hover { border-bottom-color: var(--accent); }
 .author-links {
   width: 232px;
   list-style: none;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
+  padding-top: 4px;
 }
 .author-links li { padding: 3px 0; }
 .author-links a {
